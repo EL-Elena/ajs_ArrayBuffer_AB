@@ -1,6 +1,5 @@
 export default class ArrayBufferConverter {
-  load(buffer) {
-    this.converter = Buffer.from(buffer).toString();
-    return this.converter;
+  static load(buffer) {
+    return String.fromCharCode.apply(null, new Uint16Array(buffer));
   }
 }
